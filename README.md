@@ -1,8 +1,8 @@
-# Interview Questions & Concepts
+**Interview Questions & Concepts**
 
 A collection of JavaScript and React exercises covering common interview questions and language gotchas.
 
-## How to Run
+**How to Run**
 
 ```bash
 node main.js
@@ -15,7 +15,7 @@ node main.js
 <details>
 <summary><b>JavaScript Questions</b></summary>
 
-### 1. Object References vs Spread Copy
+**1. Object References vs Spread Copy**
 
 ```js
 const obj1 = { prop: 1 };
@@ -29,7 +29,7 @@ console.log(obj2); // { prop: 2 } — same reference, reflects the change
 console.log(obj3); // { prop: 1 } — independent copy, unchanged
 ```
 
-### 2. Closures and `var` in Loops
+**2. Closures and `var` in Loops**
 
 ```js
 function func() {
@@ -46,7 +46,7 @@ var par1 = func();
 par1[5](); // 10 — all closures share the same `i`, which is 10 after the loop
 ```
 
-### 3. `this` Binding in Nested Functions
+**3. `this` Binding in Nested Functions**
 
 ```js
 let instabugObject = {
@@ -64,7 +64,7 @@ let instabugObject = {
 instabugObject.func();
 ```
 
-### 4. Event Loop & setTimeout
+**4. Event Loop & setTimeout**
 
 ```js
 (function () {
@@ -76,7 +76,7 @@ instabugObject.func();
 // Output: 1, 4, 3, 2
 ```
 
-### 5. Sparse Arrays
+**5. Sparse Arrays**
 
 ```js
 let perfTechniques = ["web workers", "code splitting"];
@@ -84,7 +84,7 @@ perfTechniques[100] = "service workers";
 console.log(perfTechniques.length); // 101 — JS extends the array with empty slots
 ```
 
-### 6. Async/Await & Promise States
+**6. Async/Await & Promise States**
 
 ```js
 async function fetchData() {
@@ -97,7 +97,7 @@ console.log(data); // Promise { <pending> } — not awaited
 fetchData().then(result => console.log(result)); // "data"
 ```
 
-### 7. ES6 Module Exports Are Read-Only
+**7. ES6 Module Exports Are Read-Only**
 
 ```js
 // counter.js
@@ -109,14 +109,14 @@ import counter from './counter.js';
 counter++; // Error — default exports are read-only bindings
 ```
 
-### 8a. setInterval Return Value
+**8a. setInterval Return Value**
 
 ```js
 const id = setInterval(() => console.log('Hi'), 1000);
 // Returns a unique interval ID (e.g. 1) used with clearInterval(id)
 ```
 
-### 8b. Object Reference Equality
+**8b. Object Reference Equality**
 
 ```js
 function guessMyIdentity(data) {
@@ -132,7 +132,7 @@ function guessMyIdentity(data) {
 guessMyIdentity({ name: 'Ahmed', age: 25 }); // "object 3" — every {} creates a new reference
 ```
 
-### 9. Array.sort Default Behavior
+**9. Array.sort Default Behavior**
 
 ```js
 var savings = [2, 4, 16, 28, 1, 32, 8, 10];
@@ -144,7 +144,7 @@ console.log(savings); // [1, 10, 16, 2, 28, 32, 4, 8]
 savings.sort((a, b) => a - b); // [1, 2, 4, 8, 10, 16, 28, 32]
 ```
 
-### 10. Object Keys vs Set Values
+**10. Object Keys vs Set Values**
 
 ```js
 const obj = { 1: 'one', 2: 'two', 3: 'three' };
@@ -157,7 +157,7 @@ set.has('1'); // false — Set keeps original types, '1' !== 1
 set.has(2);   // true
 ```
 
-### 11. Falsy Values
+**11. Falsy Values**
 
 ```js
 0;                 // falsy
@@ -170,7 +170,7 @@ null;              // falsy
 NaN;               // falsy
 ```
 
-### 12. Catch Block Variable Scoping
+**12. Catch Block Variable Scoping**
 
 ```js
 (() => {
@@ -186,7 +186,7 @@ NaN;               // falsy
 })();
 ```
 
-### 13. Array.reduce
+**13. Array.reduce**
 
 ```js
 [[0, 1], [2, 3]].reduce((acc, val) => {
@@ -196,7 +196,7 @@ NaN;               // falsy
 // Step 2: acc = [1,2,1,2], val = [2,3] → acc.concat(acc) → [1,2,1,2,1,2,1,2]
 ```
 
-### 14. Method Binding & `this` Loss
+**14. Method Binding & `this` Loss**
 
 ```js
 let auth = {
@@ -212,7 +212,7 @@ console.log(auth.getUserId()); // "adminz2z21z"
 console.log(stoleUserId());   // "undefinedundefined" — `this` lost, points to global
 ```
 
-### 15. indexOf Falsy Trap
+**15. indexOf Falsy Trap**
 
 ```js
 const fruit = ['apple', 'banana', 'cherry'];
@@ -234,7 +234,7 @@ if (fruit.includes('apple')) { /* ... */ }
 <details>
 <summary><b>React Questions</b></summary>
 
-### 1. What is JSX and How Does It Work?
+**1. What is JSX and How Does It Work?**
 JSX, short for JavaScript XML, is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript. It makes building React components easier. JSX gets converted into JavaScript function calls, often by Babel.
 
 ```jsx
@@ -245,7 +245,7 @@ JSX, short for JavaScript XML, is a syntax extension for JavaScript that allows 
 React.createElement('div', null, 'Hello, world!')
 ```
 
-### 2. What Are React Fragments Used For?
+**2. What Are React Fragments Used For?**
 React Fragments allow you to group multiple elements without adding extra nodes to the DOM. They are particularly useful when you need to return multiple elements from a component but don't want to wrap them in a container element.
 
 ```jsx
@@ -270,7 +270,7 @@ function List({ items }) {
 }
 ```
 
-### 3. What Are Stateless Components?
+**3. What Are Stateless Components?**
 Stateless components do not manage internal state; they receive data via props and focus solely on rendering UI based on that data.
 
 ```jsx
@@ -279,7 +279,7 @@ function Greeting({ name }) {
 }
 ```
 
-### 4. What Are Stateful Components?
+**4. What Are Stateful Components?**
 Stateful components manage their own internal state and can update their UI based on user interactions or other events.
 
 ```jsx
@@ -289,7 +289,7 @@ function Counter() {
 }
 ```
 
-### 5. What Is the Difference Between Controlled and Uncontrolled Components?
+**5. What Is the Difference Between Controlled and Uncontrolled Components?**
 
 **Controlled components** have their form data managed by React state. The component re-renders on every change.
 
@@ -310,19 +310,19 @@ function UncontrolledInput() {
 }
 ```
 
-### 6. What Are the Benefits of Using Hooks in React?
+**6. What Are the Benefits of Using Hooks in React?**
 - Allow using state and lifecycle features in functional components (no need for classes)
 - Enable reusing stateful logic across components via custom hooks
 - Simplify component logic and make it easier to read and test
 - Reduce boilerplate compared to class components
 
-### 7. What Are the Rules of React Hooks?
+**7. What Are the Rules of React Hooks?**
 1. **Only call hooks at the top level** — not inside loops, conditions, or nested functions
 2. **Only call hooks from React functions** — either React components or custom hooks, never regular JS functions
 3. **Use hooks in the same order** — hooks must be called in the same order on every render to keep state consistent
 4. **Don't call hooks conditionally** — always call them unconditionally so React can track them correctly
 
-### 8. What Is Lazy Loading in React?
+**8. What Is Lazy Loading in React?**
 Lazy loading loads components or resources only when they are needed, reducing initial load time. React provides `React.lazy` and `Suspense` to implement this.
 
 ```jsx
@@ -337,7 +337,7 @@ function App() {
 }
 ```
 
-### 9. How Would You Lift State Up, and Why Is It Necessary?
+**9. How Would You Lift State Up, and Why Is It Necessary?**
 Lifting state up means moving shared state to the closest common ancestor of the components that need it. This is necessary when multiple components need to reflect the same data.
 
 ```jsx
@@ -352,7 +352,7 @@ function Parent() {
 }
 ```
 
-### 10. Why Does React Recommend Against Mutating State?
+**10. Why Does React Recommend Against Mutating State?**
 React relies on reference comparison to detect changes. Mutating state directly doesn't create a new reference, so React won't detect the change and won't re-render. Always return a new object or array.
 
 ```jsx
@@ -364,7 +364,7 @@ setState(state);
 setState({ ...state, items: [...state.items, newItem] });
 ```
 
-### 11. What Does Re-rendering Mean in React?
+**11. What Does Re-rendering Mean in React?**
 Re-rendering is the process of updating the UI when a component's state or props change. This involves:
 
 1. Recalculating the JSX returned by the component
@@ -373,7 +373,7 @@ Re-rendering is the process of updating the UI when a component's state or props
 
 Re-rendering ensures the UI stays in sync with the component's state and props.
 
-### 12. What Are Error Boundaries in React?
+**12. What Are Error Boundaries in React?**
 Error boundaries catch JavaScript errors in their child components, log them, and display fallback UI instead of crashing the application. They use `componentDidCatch` and `static getDerivedStateFromError` methods.
 
 ```jsx
@@ -397,7 +397,7 @@ class ErrorBoundary extends React.Component {
 
 > **Note:** Error boundaries do not catch errors in event handlers or asynchronous code.
 
-### 13. What Are React Portals Used For?
+**13. What Are React Portals Used For?**
 React Portals allow rendering children into a DOM node outside the parent component's hierarchy. This is useful for modals or tooltips that need to escape parent `overflow` or `z-index` constraints.
 
 ```jsx
@@ -409,7 +409,7 @@ function Modal({ children }) {
 }
 ```
 
-### 14. What Is Code Splitting in a React Application?
+**14. What Is Code Splitting in a React Application?**
 Code splitting enhances performance by dividing code into smaller chunks loaded on demand, reducing initial load times. This can be achieved through dynamic `import()` statements or using `React.lazy` and `Suspense`.
 
 ```jsx
@@ -429,7 +429,7 @@ function App() {
 }
 ```
 
-### 15. Explain Prop Drilling
+**15. Explain Prop Drilling**
 Prop drilling is when you pass data from a parent component to a deeply nested child component through props, even if intermediate components don't use it. This makes code harder to maintain. Solutions include React Context, state management libraries (Redux, Zustand), or component composition.
 
 ```jsx
