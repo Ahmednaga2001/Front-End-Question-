@@ -235,6 +235,7 @@ if (fruit.includes('apple')) { /* ... */ }
 <summary><b>React Questions</b></summary>
 
 **1. What is JSX and How Does It Work?**
+
 JSX, short for JavaScript XML, is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript. It makes building React components easier. JSX gets converted into JavaScript function calls, often by Babel.
 
 ```jsx
@@ -246,6 +247,7 @@ React.createElement('div', null, 'Hello, world!')
 ```
 
 **2. What Are React Fragments Used For?**
+
 React Fragments allow you to group multiple elements without adding extra nodes to the DOM. They are particularly useful when you need to return multiple elements from a component but don't want to wrap them in a container element.
 
 ```jsx
@@ -271,6 +273,7 @@ function List({ items }) {
 ```
 
 **3. What Are Stateless Components?**
+
 Stateless components do not manage internal state; they receive data via props and focus solely on rendering UI based on that data.
 
 ```jsx
@@ -280,6 +283,7 @@ function Greeting({ name }) {
 ```
 
 **4. What Are Stateful Components?**
+
 Stateful components manage their own internal state and can update their UI based on user interactions or other events.
 
 ```jsx
@@ -311,18 +315,21 @@ function UncontrolledInput() {
 ```
 
 **6. What Are the Benefits of Using Hooks in React?**
+
 - Allow using state and lifecycle features in functional components (no need for classes)
 - Enable reusing stateful logic across components via custom hooks
 - Simplify component logic and make it easier to read and test
 - Reduce boilerplate compared to class components
 
 **7. What Are the Rules of React Hooks?**
+
 1. **Only call hooks at the top level** — not inside loops, conditions, or nested functions
 2. **Only call hooks from React functions** — either React components or custom hooks, never regular JS functions
 3. **Use hooks in the same order** — hooks must be called in the same order on every render to keep state consistent
 4. **Don't call hooks conditionally** — always call them unconditionally so React can track them correctly
 
 **8. What Is Lazy Loading in React?**
+
 Lazy loading loads components or resources only when they are needed, reducing initial load time. React provides `React.lazy` and `Suspense` to implement this.
 
 ```jsx
@@ -338,6 +345,7 @@ function App() {
 ```
 
 **9. How Would You Lift State Up, and Why Is It Necessary?**
+
 Lifting state up means moving shared state to the closest common ancestor of the components that need it. This is necessary when multiple components need to reflect the same data.
 
 ```jsx
@@ -353,6 +361,7 @@ function Parent() {
 ```
 
 **10. Why Does React Recommend Against Mutating State?**
+
 React relies on reference comparison to detect changes. Mutating state directly doesn't create a new reference, so React won't detect the change and won't re-render. Always return a new object or array.
 
 ```jsx
@@ -365,6 +374,7 @@ setState({ ...state, items: [...state.items, newItem] });
 ```
 
 **11. What Does Re-rendering Mean in React?**
+
 Re-rendering is the process of updating the UI when a component's state or props change. This involves:
 
 1. Recalculating the JSX returned by the component
@@ -374,6 +384,7 @@ Re-rendering is the process of updating the UI when a component's state or props
 Re-rendering ensures the UI stays in sync with the component's state and props.
 
 **12. What Are Error Boundaries in React?**
+
 Error boundaries catch JavaScript errors in their child components, log them, and display fallback UI instead of crashing the application. They use `componentDidCatch` and `static getDerivedStateFromError` methods.
 
 ```jsx
@@ -398,6 +409,7 @@ class ErrorBoundary extends React.Component {
 > **Note:** Error boundaries do not catch errors in event handlers or asynchronous code.
 
 **13. What Are React Portals Used For?**
+
 React Portals allow rendering children into a DOM node outside the parent component's hierarchy. This is useful for modals or tooltips that need to escape parent `overflow` or `z-index` constraints.
 
 ```jsx
@@ -410,6 +422,7 @@ function Modal({ children }) {
 ```
 
 **14. What Is Code Splitting in a React Application?**
+
 Code splitting enhances performance by dividing code into smaller chunks loaded on demand, reducing initial load times. This can be achieved through dynamic `import()` statements or using `React.lazy` and `Suspense`.
 
 ```jsx
@@ -430,6 +443,7 @@ function App() {
 ```
 
 **15. Explain Prop Drilling**
+
 Prop drilling is when you pass data from a parent component to a deeply nested child component through props, even if intermediate components don't use it. This makes code harder to maintain. Solutions include React Context, state management libraries (Redux, Zustand), or component composition.
 
 ```jsx
