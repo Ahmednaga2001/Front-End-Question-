@@ -13,7 +13,7 @@ node main.js
 ---
 
 <details>
-<summary><h2>JavaScript Questions</h2></summary>
+<summary><b>JavaScript Questions</b></summary>
 
 ### 1. Object References vs Spread Copy
 
@@ -232,7 +232,7 @@ if (fruit.includes('apple')) { /* ... */ }
 ---
 
 <details>
-<summary><h2>React Questions</h2></summary>
+<summary><b>React Questions</b></summary>
 
 ### 1. What is JSX and How Does It Work?
 JSX, short for JavaScript XML, is a syntax extension for JavaScript that allows you to write HTML-like code within JavaScript. It makes building React components easier. JSX gets converted into JavaScript function calls, often by Babel.
